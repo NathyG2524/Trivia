@@ -90,6 +90,8 @@ You will need to provide detailed documentation of your API endpoints including 
 }
 ```
 
+`GET '/api/
+
 ## Testing
 
 Write at least one test for the success and at least one error behavior of each endpoint using the unittest library.
