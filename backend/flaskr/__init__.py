@@ -176,26 +176,26 @@ def create_app(test_config=None):
     only question that include that string within their question.
     Try using the word "title" to start.
     """
-    @app.route('/search', methods=['POST'])
-    def search_questions():
-        body = request.get_json()
-        search_term = body.get('searchTerm', None)
-        if search_term is None:
-            abort(400)
+    # @app.route('/search', methods=['POST'])
+    # def search_questions():
+    #     body = request.get_json()
+    #     search_term = body.get('searchTerm', None)
+    #     if search_term is None:
+    #         abort(400)
         
-        # selection = Question.query.filter(Question.question.ilike('%' + search_term + '%')).all()
-        selection = Question.query.filter(Question.question.ilike('%{}%'.format(search_term))).all()
-        # current_questions = paginate_questions(request, selection)
-        question_dic = {}
-        for ques in selection:
-            question_dic = ques.format()
-        if len(selection) == 0:
-            abort(404)
-        return jsonify({
-            'success': True,
-            'questions': question_dic,
-            'total_questions': len(selection),
-        })
+    #     # selection = Question.query.filter(Question.question.ilike('%' + search_term + '%')).all()
+    #     selection = Question.query.filter(Question.question.ilike('%{}%'.format(search_term))).all()
+    #     # current_questions = paginate_questions(request, selection)
+    #     question_dic = {}
+    #     for ques in selection:
+    #         question_dic = ques.format()
+    #     if len(selection) == 0:
+    #         abort(404)
+    #     return jsonify({
+    #         'success': True,
+    #         'questions': question_dic,
+    #         'total_questions': len(selection),
+    #     })
 
 
 
