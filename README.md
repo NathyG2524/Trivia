@@ -250,7 +250,7 @@ By making notes ahead of time, you will practice the core skill of being able to
 ```json
 {
     "previous_questions": [1, 4, 20, 15],
-    "quiz_category": "2"
+    "quiz_category": {"type": "Art", "id": "2"}
  }
 ```
     Returns: An object with the following fields:
